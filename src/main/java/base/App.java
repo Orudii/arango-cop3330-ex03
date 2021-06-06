@@ -1,6 +1,6 @@
 /*
  *  UCF COP3330 Summer 2021 Assignment 1 Solution
- *  Copyright 2021 first_name last_name
+ *  Copyright 2021 Rudy Arango
  */
 package base;
 
@@ -26,28 +26,18 @@ If your language supports string interpolation or string substitution,
 import java.util.Scanner;
 
 public class App {
-    static Scanner in = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        App myApp = new App();
+    public static void main(String[] args)
+    {
+        Scanner input= new Scanner(System.in);
 
-        String name = myApp.readQuote();
-        String outputString = myApp.generateOutputString(name);
-        myApp.printOutput(outputString);
-    }
+        System.out.print("What is the quote? ");
+        String quote = input.nextLine();
 
-    public void printOutput(String outputString) {
-        System.out.println(outputString);
-    }
+        System.out.print("Who said it? ");
+        String name = input.nextLine();
 
-    public String readQuote() {
-        System.out.print("What is your name? ");
-        String name = in.nextLine();
-        return name;
-    }
-
-    public String generateOutputString(String name) {
-        return String.format("Hello, %s, nice to meet you!", name);
+        System.out.println("" +name+ " says, '" +quote+ '"');
     }
 }
 
